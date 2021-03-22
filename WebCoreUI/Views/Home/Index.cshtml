@@ -1,0 +1,45 @@
+﻿@using Entities.Concrete;
+@model Core.Utilities.Results.IDataResult<List<Product>>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title> </title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="bg-warning text-white p-2">
+            Ürün Sayısı : @Model.Data.Count - İşlem durumu : @Model.Success
+        </div>
+        <br />
+        <table class="table table-bordered table-hover">
+            <thead class="bg-light">
+                <tr>
+                    <th>ProductId</th>
+                    <th>ProductName</th>
+                    <th>UnitsInStock</th>
+                    <th>UnitPrice</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Data)
+                {
+                    <tr>
+                        <td>@item.ProductId</td>
+                        <td>@item.ProductName</td>
+                        <td>@item.UnitsInStock</td>
+                        <td>@item.UnitPrice</td>
+                        <td>
+                            <a href="/Home/UrunSil/@item.ProductId" class=" btn btn-danger small">Sil</a>
+                            <a href="#" class="btn btn-primary small">Güncelle</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

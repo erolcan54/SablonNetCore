@@ -1,0 +1,28 @@
+﻿@using (Html.BeginForm("UrunEkleIslem", "Home"))
+{
+    <table>
+        <tr>
+            <td>CategoryId :</td>
+            <td><input name="CategoryId" type="text" /></td>
+
+        </tr>
+        <tr>
+            <td>ProductName:</td>
+            <td><input name="ProductName" type="text" /></td>
+
+        </tr>
+        <tr>
+            <td>UnitsInStock :</td>
+            <td><input name="UnitsInStock" type="text" /></td>
+        </tr>
+        <tr>
+            <td>UnitPrice :</td>
+            <td><input name="UnitPrice" type="text" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Gönder" /></td>
+        </tr>
+
+    </table>
+}
